@@ -1,0 +1,19 @@
+\usemintedstyle{vs}
+
+\begin{minted}{python}
+
+import os
+import extcolors
+
+img = PIL.Image.open('/content/drive/MyDrive/Picture11.jpeg')
+colors, pix_c = extcolors.extract_from_image(img)
+print(colors)
+color_percentages = []
+for color, count in colors:
+    percentage = (count / pix_c) * 100
+    color_percentages.append((color, percentage))
+
+for color, percentage in color_percentages:
+    print(f"Color {color}: {percentage:.2f}%")
+
+\end{minted}
